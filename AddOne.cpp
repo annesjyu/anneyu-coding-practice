@@ -3,27 +3,27 @@
 
 using namespace std;
 
-vector<int> AddOne(const vector<int>& n) {
-    vector<int> res;
+void AddOne(vector<int>& n) {
     int t = n.back() + 1;
-    res.emplace_back(t % 10);
+    n.back() = t % 10;
     int carry = t >= 10 ? 1 : 0;
-    for ( int i = n.size() - 2; i >= 0; i -- ) {
+    for ( int i = n.size() - 2; i >= 0 && carry; i -- ) {
         t = n[i] + carry;
-        res.insert(res.begin(), t % 10);
-        carry = t >= 10 ? 1 : 0;
+        if ( t == 10 ) {
+            carry = 1;
+            n[i] = 0;
+        }
     }
     if ( carry ) {
-        res.insert(res.begin(), carry);
+        n.insert(n.begin(), carry);
     }
-    return res;
 }
 
 int main() {
     vector<vector<int>> tests = {{1,2,3}, {9,9}, {0}};
     for ( auto &v : tests ) {
-        vector<int> res = AddOne(v);
-        for ( auto &i : res ) {
+        AddOne(v);
+        for ( auto &i : v ) {
             cout << i;
         }
         cout << endl;
