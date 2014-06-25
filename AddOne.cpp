@@ -1,3 +1,13 @@
+/*
+Element of Programming interview
+
+Write a function to take an array of digits encoding a dicimal number D
+and update array to represent the number D + 1. For example, if A = <1,
+2, 3> then you should update A to <1, 2, 4>;
+
+Anne Yu
+June 26 Wed
+*/
 #include <iostream>
 #include <vector>
 
