@@ -1,3 +1,18 @@
+/*
+Count and say
+1
+11
+21
+1211
+111221
+312211
+13112221
+1113213211
+
+Notes:
+1. to_string(int n) -> std::string it's not necessary to use istringstream(iss) to transform int to string
+2. use emplace_back to dynamically increase array size
+*/
 #include <iostream>
 #include <string>
 #include <vector>
