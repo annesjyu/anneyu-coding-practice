@@ -1,3 +1,12 @@
+/*
+org = 2e3c11d0b
+decoded = eecccddddddddddd
+
+Notes:
+1. use isalpha, isdigit, isalnum, ispunct these functions
+2. if a number, consider it might have multiple digits
+*/
+
 #include <iostream>
 #include <string>
 
