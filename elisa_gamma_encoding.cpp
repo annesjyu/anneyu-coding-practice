@@ -6,6 +6,11 @@
  * number = 13,
  * encoded = (4bits - 1) 0s + (1101)_2 = 0001101
  * decoded = 13
+ 
+For example,
+13, 14, 45, 678,
+Encoded = 00011010001110000001011010000000001010100110
+Decoded = 13, 14, 45, 678,
  * */
 
 #include <iostream>
