@@ -20,6 +20,7 @@
  * time = 15, A[15] =10, q.front = 68, max  = 95, q.size = 10, max_q.size = 4
  * time = 16, A[16] =52, q.front = 18, max  = 95, q.size = 10, max_q.size = 3
  *
+ * A deque is used for emplace on the back and pop from back.
  * */
 
 #include <iostream>
