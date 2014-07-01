@@ -1,3 +1,6 @@
+/*
+compute the running median of a sequence, the time complexity should be O(logn) per element read in, where n is the number of values read in up to that element.
+*/
 #include <iostream>
 #include <queue>
 #include <vector>
