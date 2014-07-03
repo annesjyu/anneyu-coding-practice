@@ -13,7 +13,7 @@ using namespace std;
 class GreaterCmp {
     public:
     bool operator () ( pair<string, int>& a, pair<string, int>& b) {
-        if ( a.second == b.second ) {
+        if ( a.second == b.second ) { // if there is a frequency tie, use string's lexicographical order
             return a.first < b.first;
         } else {
             return a.second > b.second;
@@ -36,7 +36,7 @@ void print_k_most_frequent(const vector<string>& v, const int k) {
     }
 
     priority_queue<pair<string, int>, vector<pair<string, int> >, GreaterCmp> min_heap;
-    for ( auto it = counts.begin(); it != counts.end(); it ++ ) {
+    for ( auto it = counts.begin(); it != counts.end(); it ++ ) { //use auto type
         min_heap.emplace(it->first, it->second);
         if ( min_heap.size() > k ) {
             min_heap.pop();
@@ -50,7 +50,7 @@ void print_k_most_frequent(const vector<string>& v, const int k) {
         min_heap.pop();
     }
 
-    for ( auto it = res.rbegin(); it != res.rend(); it ++ ) {
+    for ( auto it = res.rbegin(); it != res.rend(); it ++ ) { // print it reversely
         cout << it->first << ", frequency = " << it->second << endl;
     }
     cout << endl;
