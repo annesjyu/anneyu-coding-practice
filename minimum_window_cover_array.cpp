@@ -1,5 +1,17 @@
 /*
  *Let A and Q be arrays of strings, find a minimum subarray of A to cover Q. Suppose Q is small can be stored in RAM.
+ A = My paramount object in this struggle is to save the Union and is not either to save or to destroy slavery If I could save the Union without freeing any slave I would do it and if I could save it by freeing all the slaves I would do it and if I could save it by freeing some and leaving others alone I would also do that
+G = save save Union
+hash_g:
+key = union, value = 1
+key = save, value = 2
+hash_a: k = union, v = 10 | k = save, v = 8 | 16 |
+found another match: start = 8, end = 16 :"save", "the", "Union", "and", "is", "not", "either", "to", "save",
+hash_a: k = union, v = 10 | k = save, v = 16 | 24 |
+hash_a: k = union, v = 26 | k = save, v = 16 | 24 |
+hash_a: k = union, v = 26 | k = save, v = 24 | 39 |
+hash_a: k = union, v = 26 | k = save, v = 39 | 54 |
+found min subarray length = 9
  * */
 #include <algorithm>
 #include <iostream>
