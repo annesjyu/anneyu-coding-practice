@@ -20,8 +20,7 @@ const int find_minimum_subarray(const vector<string>& A, const vector<string>& G
     unordered_map<string, list<int> > hash_a; //list can easily push from back and pop from front, compared with vector, can be deleted and inserted O(1)
     unordered_map<string, int> hash_g;
     
-    for ( int i = 0; i < G.size(); i ++ ) {
-        string s = G[i];
+    for ( auto s : G ) {
         transform (s.begin(), s.end(), s.begin(), ::tolower); //use for_each c++11 syntax
         hash_g[s]++; //frequency of each word
     }
