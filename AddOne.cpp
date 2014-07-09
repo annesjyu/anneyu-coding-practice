@@ -29,14 +29,45 @@ void AddOne(vector<int>& n) {
     }
 }
 
+void AddOne_2(vector<int>& D) {
+    if ( D.empty() ) {
+        return;
+    }
+    int carry = 0;
+    for (int i = D.size() - 1; i >= 0; i -- ) {
+        D[i] += ( i == D.size() - 1 ) ? 1 : carry;
+        carry = (D[i] == 10) ? 1 : 0;
+        D[i] = D[i] % 10;
+    }
+    if ( carry ) {
+        D.insert(D.begin(), carry);
+    }
+}
+
 int main() {
     vector<vector<int>> tests = {{1,2,3}, {9,9}, {0}};
-    for ( auto &v : tests ) {
+    cout << "version1-----------------" << endl;
+    for ( auto v : tests ) {
+        cout << "n = ";
+        for_each(v.begin(), v.end(), [](int n){cout << n;});
+        cout << ", + 1 = ";
         AddOne(v);
-        for ( auto &i : v ) {
-            cout << i;
-        }
+        for_each(v.begin(), v.end(), [](int n){cout << n;});
+        cout << ", ";
         cout << endl;
-    }
+    } 
+        cout << endl;
+
+    cout << "version2-----------------" << endl;
+    for ( auto v : tests ) {
+        cout << "n = ";
+        for_each(v.begin(), v.end(), [](int n){cout << n;});
+        cout << ", + 1 = ";
+        AddOne_2(v);
+        for_each(v.begin(), v.end(), [](int n){cout << n;});
+        cout << ", ";
+        cout << endl;
+     }    
+    cout << endl;
     return 0;
 }
