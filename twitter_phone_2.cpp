@@ -10,6 +10,26 @@
  *
  * solution one : using sort
  * solution two: using hash
+ * array =
+ * abc cde 1
+ * abc cde 2
+ * a xyz 3
+ * a xyz 4
+ * ax yz 5
+ * 123 yz 10
+ *
+ * avgs =
+ * 123 yz 10
+ * a xyz 3.5
+ * abc cde 1.5
+ * ax yz 5
+ *
+ * avgs =
+ * abc cde 1.5
+ * a xyz 3.5
+ * ax yz 5
+ * 123 yz 10
+ * July 9, 2014
  * */
 
 #include <algorithm>
