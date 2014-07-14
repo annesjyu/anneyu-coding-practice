@@ -1,0 +1,34 @@
+	(C) 2007 Rafael J. Wysocki <rjw@sisk.pl>, GPL
+   "platform" modes (see: Documentation/power/basic-pm-debugging.txt, 1).
+   (see: Documentation/power/basic-pm-debugging.txt, 1).
+   (see: Documentation/power/basic-pm-debugging.txt, 2).
+   2).  [As far as the STR tests are concerned, it should not matter whether or
+   hibernation.
+   in the "reboot", "shutdown" and "platform" modes.
+   not the driver is built as a module.]
+(aka suspend to disk or STD) and suspend to RAM (STR), because each of these
+1. Preparing the test system
+2. Testing the driver
+Each of the above tests should be repeated several times and the STD tests
+Of course, for this purpose the test system has to be known to suspend and
+Once you have resolved the suspend/resume-related problems with your test system
+Testing suspend and resume support in device drivers
+Unfortunately, to effectively test the support for the system-wide suspend and
+a) Build the driver as a module, load it and try the test modes of hibernation
+b) Load the driver and attempt to hibernate in the "reboot", "shutdown" and
+c) Compile the driver directly into the kernel and try the test modes of
+cases involves slightly different operations and different interactions with
+d) Attempt to hibernate with the driver compiled directly into the kernel
+e) Try the test modes of suspend (see: Documentation/power/basic-pm-debugging.txt,
+f) Attempt to suspend to RAM using the s2ram tool with the driver loaded
+for more information about the debugging of suspend/resume functionality.
+functional system with this driver loaded.  Moreover, that should be done
+regarded as suspend/resume-safe.
+resolve all suspend/resume-related problems in the test system before you start
+resume transitions in a driver, it is necessary to suspend and resume a fully
+resume without the driver being tested.  Thus, if possible, you should first
+several times, preferably several times in a row, and separately for hibernation
+should be mixed with the STR tests.  If any of them fails, the driver cannot be
+testing the new driver.  Please see Documentation/power/basic-pm-debugging.txt
+the machine's BIOS.
+without the new driver, you are ready to test it:
